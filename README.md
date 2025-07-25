@@ -36,5 +36,4 @@ cd parallax-website
 ## 📂Referências e agradecimentos
 
 - Usei como referência este video: https://www.youtube.com/watch?v=kmM6mqvnxcs
-<br>
 - Agradecimentos ao canal Codehal 🙋‍♂️
