@@ -18,17 +18,25 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px;
+    padding: 30px 5vw; /* responsivo */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    flex-wrap: wrap;
 }
 
 .logo {
     font-size: 2em;
     color: #3b3593;
     pointer-events: none;
+    white-space: nowrap;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navigation a {
@@ -36,11 +44,13 @@ header {
     color: #3b3593;
     padding: 6px 15px;
     border-radius: 20px;
-    margin: 0 10px;
+    margin: 5px;
     font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.navigation a:hover, .navigation a.active {
+.navigation a:hover,
+.navigation a.active {
     background-color: #3b3593;
     color: #fff;
 }
@@ -51,6 +61,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .parallax img {
@@ -58,31 +69,90 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    object-fit: cover;
+    height: 100%;
     pointer-events: none;
-    overflow: hidden;
 }
 
 #text {
     position: absolute;
     font-size: 5em;
     color: #fff;
+    text-align: center;
+    padding: 0 10px;
 }
 
 .sec {
     position: relative;
     background: #030033;
-    padding: 100px;
-    margin-top: 100px;
+    padding: 100px 5vw;
 }
 
 .sec h2 {
-    font-size: 3em;
+    font-size: 2.5em;
     color: #fff;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .sec p {
     font-size: 1em;
     color: #fff;
     font-weight: 300;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 5vw;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .navigation {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    #text {
+        font-size: 2.5em;
+    }
+
+    .sec {
+        padding: 60px 5vw;
+    }
+
+    .sec h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    #text {
+        font-size: 2em;
+    }
+
+    .logo {
+        font-size: 1.2em;
+    }
+
+    .navigation a {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+
+    .sec h2 {
+        font-size: 1.5em;
+    }
+
+    .sec p {
+        font-size: 0.9em;
+    }
 }
